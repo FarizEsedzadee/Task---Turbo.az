@@ -1,0 +1,9 @@
+* {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.active {
+    background-color: #ca1016;
+    border-color: #ca1016;
+    color: #FFF;
+}

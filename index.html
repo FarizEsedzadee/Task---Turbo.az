@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css"
+        integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Turbo.Az: avtomobil almaq, satmaq, təzə və işlənmiş avtomobillərin satışı</title>
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <link rel="icon" type="image/x-icon" href="./favicon.ico">
+
+</head>
+
+<body>
+
+    <header class="text-[15px]">
+        <div class="header-top">
+            <div class="bg-[#F6F7FA] text-[#8D94AD]">
+                <div class="max-w-[1010px] mx-auto px-2 h-[40px] flex items-center justify-between">
+                    <div class="left ">
+                        <ul class="flex items-center gap-[25px]">
+                            <li class="hover:text-[#ca1016]"><a target="_blank" href="#">Tap.az</a></li>
+                            <li class="hover:text-[#ca1016]"><a target="_blank" href="#">Bina.az</a></li>
+                            <li class="hover:text-[#ca1016]"><a target="_blank" href="#">Boss.az</a></li>
+                        </ul>
+                    </div>
+                    <div class="right">
+                        <ul class="flex items-center gap-[22px]">
+                            <li class="text-[#212C3A]">Dəstək: <a class="hover:text-[#ca1016]"
+                                    href="tel:+0125264747">(012)
+                                    526-47-47</a></li>
+                            <li class="hover:text-[#ca1016]"><a href="#">Yardım</a></li>
+                            <li class="hover:text-[#ca1016]"><a href="#">RU</a></li>
+                            <li class="hover:text-[#ca1016]"><a href="#" class="flex items-center"><i
+                                        class="fa-solid fa-heart me-[7px]"></i> Seçilmişlər</a></li>
+                            <li class="hover:text-[#ca1016]"><a href="#" class="flex items-center"><i
+                                        class="fa-solid fa-circle-user me-[7px] text-[22px]"></i> Giriş</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <nav class="bg-[#ca1016]">
+                <div
+                    class="max-w-[1010px] mx-auto px-2 py-[21px] text-white h-[60px] flex items-center justify-between">
+                    <div class="left flex items-center h-full">
+                        <h1 class="text-[18px] font-[700] uppercase me-[25px]">Turbo.Az</h1>
+                        <ul class="flex ">
+                            <li class="px-[10px]"><a href="#">Bütün elanlar</a></li>
+                            <li class="px-[10px]"><a href="#">Dilerlər</a></li>
+                            <li class="px-[10px]"><a href="#">Avtokataloq</a></li>
+                            <li class="px-[10px]"><a href="#">Moto</a></li>
+                            <li class="px-[10px]"><a href="#">Ehtiyat hissələr və aksesuarlar</a></li>
+                            <li class="px-[10px]"><a href="#">İcarə</a></li>
+                        </ul>
+                    </div>
+                    <div class="right">
+                        <button
+                            class="cursor-pointer bg-[#7ED321] h-[40px] rounded-[7px] px-[10px] font-[500] transition-all duration-200 hover:bg-[#85c01f]  flex items-center">
+                            <img class="w-[15px] h-[15px] me-[7px]" src="./assets/images/icons/plus.svg"
+                                alt="Plus Icon"> Yeni elan
+                        </button>
+                    </div>
+
+            </nav>
+        </div>
+        <div class="header-bottom bg-[#EBEDF3] p-[20px]">
+            <div class="max-w-[1010px] mx-auto px-2 flex flex-col gap-2">
+                <!-- top -->
+                <div class="top flex items-center justify-between gap-[20px] h-[48px]">
+                    <div class="relative w-64 custom-select h-full">
+                        <button
+                            class="select-btn w-full h-full px-4 py-2 rounded-md flex justify-between items-center bg-white shadow">
+                            <span class="selected-text text-[#8D94AD]">Marka</span>
+                            <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M19 9l-7 7-7-7" />
+                            </svg>
+                        </button>
+                        <ul
+                            class="dropdown hidden absolute z-10 mt-1 w-full bg-white border rounded-md shadow max-h-60 overflow-y-auto">
+                            <li data-value="" class="px-4 py-2 text-red-500 hover:bg-gray-100 cursor-pointer">❌ Sıfırla
+                            </li>
+                            <li data-value="Abarth" class="px-4 py-2 hover:bg-gray-100 cursor-pointer">Abarth</li>
+                            <li data-value="Alfa Romeo" class="px-4 py-2 hover:bg-gray-100 cursor-pointer">Alfa Romeo
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="relative w-64 custom-select h-full">
+                        <button
+                            class="select-btn w-full h-full px-4 py-2 rounded-md flex justify-between items-center bg-white shadow">
+                            <span class="selected-text text-[#8D94AD]">Model</span>
+                            <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M19 9l-7 7-7-7" />
+                            </svg>
+                        </button>
+                        <ul
+                            class="dropdown hidden absolute z-10 mt-1 w-full bg-white border rounded-md shadow max-h-60 overflow-y-auto">
+                            <li data-value="" class="px-4 py-2 text-red-500 hover:bg-gray-100 cursor-pointer">❌ Sıfırla
+                            </li>
+                            <li data-value="Giulia" class="px-4 py-2 hover:bg-gray-100 cursor-pointer">Giulia</li>
+                            <li data-value="Stelvio" class="px-4 py-2 hover:bg-gray-100 cursor-pointer">Stelvio</li>
+                        </ul>
+                    </div>
+
+                    <div class="flex">
+                        <label for="all"
+                            class="text-[#8D94AD] py-3 bg-white rounded-l-md w-[67px] inline-block text-center cursor-pointer hover:bg-gray-100 transition active">
+                            Hamısı
+                        </label>
+                        <input class="sr-only" type="radio" id="all" name="carDrived" value="all" checked>
+
+                        <label for="new"
+                            class="text-[#8D94AD] py-3 bg-white w-[66px] inline-block text-center cursor-pointer hover:bg-gray-100 transition">
+                            Yeni
+                        </label>
+                        <input class="sr-only" type="radio" id="new" name="carDrived" value="new">
+
+                        <label for="used"
+                            class="text-[#8D94AD] py-3 bg-white rounded-r-md w-[107px] inline-block text-center cursor-pointer hover:bg-gray-100 transition">
+                            Sürülmüş
+                        </label>
+                        <input class="sr-only" type="radio" id="used" name="carDrived" value="used">
+                    </div>
+
+                    <div class="relative w-64 custom-select h-full">
+                        <button
+                            class="select-btn w-full h-full px-4 py-2 rounded-md flex justify-between items-center bg-white shadow">
+                            <span class="selected-text text-[#8D94AD]">Şəhər</span>
+                            <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M19 9l-7 7-7-7" />
+                            </svg>
+                        </button>
+                        <ul
+                            class="dropdown hidden absolute z-10 mt-1 w-full bg-white border rounded-md shadow max-h-60 overflow-y-auto">
+                            <li data-value="" class="px-4 py-2 text-red-500 hover:bg-gray-100 cursor-pointer">❌ Sıfırla
+                            </li>
+                            <li data-value="yevlakh" class="px-4 py-2 hover:bg-gray-100 cursor-pointer">Yevlax</li>
+                            <li data-value="baku" class="px-4 py-2 hover:bg-gray-100 cursor-pointer">Bakı</li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- bottom -->
+                <div class="bottom flex items-center justify-between gap-[20px] h-[48px]">
+                    <div class="relative w-64 h-full flex items-center justify-between rounded-md overflow-hidden">
+                        <input type="text" placeholder="Qiymət, min"
+                            class="bg-[#FFF] border-r border-[#f0f0f0] outline-none w-1/2 h-full px-2" />
+                        <input type="text" placeholder="maks" class="bg-[#FFF] outline-none w-1/2 h-full px-2" />
+                    </div>
+
+                    <div class="w-64 h-full grid grid-cols-4 gap-3">
+                        <!-- AZN Select -->
+                        <div class="col-span-2 relative custom-select h-full">
+                            <button
+                                class="select-btn w-full h-full px-4 py-2 rounded-md flex justify-between items-center bg-white shadow">
+                                <span class="selected-text">AZN</span>
+                                <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M19 9l-7 7-7-7" />
+                                </svg>
+                            </button>
+                            <ul
+                                class="dropdown hidden absolute z-10 mt-1 w-full bg-white border rounded-md shadow max-h-60 overflow-y-auto">
+                                <li data-value="" class="px-4 py-2 text-red-500 hover:bg-gray-100 cursor-pointer">❌
+                                    Sıfırla</li>
+                                <li data-value="Giulia" class="px-4 py-2 hover:bg-gray-100 cursor-pointer">Giulia</li>
+                                <li data-value="Stelvio" class="px-4 py-2 hover:bg-gray-100 cursor-pointer">Stelvio</li>
+                            </ul>
+                        </div>
+
+                        <!-- Kredit -->
+                        <div class="col-span-1">
+                            <button
+                                class="w-full h-full px-4 py-2 rounded-md flex justify-center items-center bg-white shadow cursor-pointer">
+                                Kredit
+                            </button>
+                        </div>
+
+                        <!-- Barter -->
+                        <div class="col-span-1">
+                            <button
+                                class="w-full h-full px-4 py-2 rounded-md flex justify-center items-center bg-white shadow cursor-pointer">
+                                Barter
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="relative w-64 custom-select h-full">
+                        <button
+                            class="select-btn w-full h-full px-4 py-2 rounded-md flex justify-between items-center bg-white shadow">
+                            <span class="selected-text text-[#8D94AD]">Ban Növü</span>
+                            <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M19 9l-7 7-7-7" />
+                            </svg>
+                        </button>
+                        <ul
+                            class="dropdown hidden absolute z-10 mt-1 w-full bg-white border rounded-md shadow max-h-60 overflow-y-auto">
+                            <li data-value="" class="px-4 py-2 text-red-500 hover:bg-gray-100 cursor-pointer">❌ Sıfırla
+                            </li>
+                            <li data-value="yevlakh" class="px-4 py-2 hover:bg-gray-100 cursor-pointer">Yevlax</li>
+                            <li data-value="baku" class="px-4 py-2 hover:bg-gray-100 cursor-pointer">Bakı</li>
+                        </ul>
+                    </div>
+
+                    <div class="grid grid-cols-2 w-64 h-full">
+                        <div class="relative custom-select h-full">
+                            <button
+                                class="select-btn w-full h-full px-4 py-2 flex justify-between items-center bg-white shadow rounded-l-md">
+                                <span class="selected-text text-[#8D94AD]">İl, min.</span>
+                                <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M19 9l-7 7-7-7" />
+                                </svg>
+                            </button>
+                            <ul
+                                class="dropdown hidden absolute z-10 mt-1 w-full bg-white border rounded-md shadow max-h-60 overflow-y-auto">
+                                <li data-value="" class="px-4 py-2 text-red-500 hover:bg-gray-100 cursor-pointer">❌
+                                    Sıfırla
+                                </li>
+                                <li data-value="yevlakh" class="px-4 py-2 hover:bg-gray-100 cursor-pointer">Yevlax</li>
+                                <li data-value="baku" class="px-4 py-2 hover:bg-gray-100 cursor-pointer">Bakı</li>
+                            </ul>
+                        </div>
+                        <div class="relative custom-select h-full">
+                            <button
+                                class="select-btn w-full h-full px-4 py-2 flex justify-between items-center bg-white shadow rounded-r-md">
+                                <span class="selected-text text-[#8D94AD]">maks.</span>
+                                <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M19 9l-7 7-7-7" />
+                                </svg>
+                            </button>
+                            <ul
+                                class="dropdown hidden absolute z-10 mt-1 w-full bg-white border rounded-md shadow max-h-60 overflow-y-auto">
+                                <li data-value="" class="px-4 py-2 text-red-500 hover:bg-gray-100 cursor-pointer">❌
+                                    Sıfırla
+                                </li>
+                                <li data-value="yevlakh" class="px-4 py-2 hover:bg-gray-100 cursor-pointer">Yevlax</li>
+                                <li data-value="baku" class="px-4 py-2 hover:bg-gray-100 cursor-pointer">Bakı</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <!-- filtr -->
+                <div class="pt-4 pb-2 flex items-center justify-between">
+                    <span class="text-[#212C3A]">Bu gün: <span class="text-[#4C88F9]">1809 yeni elan</span></span>
+                    <div class="flex items-center">
+                        <button class="text-[#ca1016] leading-[1.2] cursor-pointer">Sıfırla</button>
+                        <button class="flex items-center p-[15px_40px] text-[#ca1016] leading-[1.2]">
+                            <span class="cursor-pointer">Daha çox filtr</span>
+                            <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M19 9l-7 7-7-7" />
+                            </svg>
+                        </button>
+                        <button
+                            class="bg-[#ca1016] text-white p-[15px_40px] leading-[1.2] font-[400] rounded-[7px] cursor-pointer duration-200 transition-all hover:bg-[#b80d13]">Elanları
+                            göstər</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+    </header>
+
+    <main>
+        <section id="main-header" class="bg-[#F1F3F7] h-[60px] shadow-sm">
+            <div class="max-w-[1010px] mx-auto h-full flex items-center">
+                <h2 class="text-[#212C3A] font-[700] uppercase text-[16px]">Premium elanlar</h2>
+            </div>
+        </section>
+        <section id="card-section">
+            <div class="max-w-[1010px] mx-auto py-8">
+                <ul id="card-container" class="grid grid-cols-4 gap-4">
+                </ul>
+            </div>
+        </section>
+    </main>
+
+    <script src="./assets/js/data.js"></script>
+    <script src="./assets/js/script.js"></script>
+</body>
+
+</html>
