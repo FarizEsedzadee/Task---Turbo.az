@@ -1,54 +1,59 @@
 // Dom Elements
 const customSelects = document.querySelectorAll('.custom-select');
+const cardContainer = document.querySelector('#card-container');
 
-// Custom select
-customSelects.forEach(select => {
-  const button = select.querySelector('.select-btn');
-  const dropdown = select.querySelector('.dropdown');
-  const selectedText = select.querySelector('.selected-text');
-  const options = dropdown.querySelectorAll('li');
+function getCustomSelect() {
+  // Custom select
+  customSelects.forEach(select => {
+    const button = select.querySelector('.select-btn');
+    const dropdown = select.querySelector('.dropdown');
+    const selectedText = select.querySelector('.selected-text');
+    const options = dropdown.querySelectorAll('li');
 
-  button.addEventListener('click', () => {
-    dropdown.classList.toggle('hidden');
-  });
+    button.addEventListener('click', () => {
+      dropdown.classList.toggle('hidden');
+    });
 
 
-  options.forEach(option => {
-    option.addEventListener('click', () => {
-      const value = option.dataset.value;
-      const label = option.textContent;
+    options.forEach(option => {
+      option.addEventListener('click', () => {
+        const value = option.dataset.value;
+        const label = option.textContent;
 
-      selectedText.textContent = label;
-      dropdown.classList.add('hidden');
+        selectedText.textContent = label;
+        dropdown.classList.add('hidden');
 
-      console.log("Seçilen dəyər:", value);
+        console.log("Seçilen dəyər:", value);
+      });
+    });
+
+    document.addEventListener('click', (e) => {
+      const clickedOutside = !select.contains(e.target);
+      if (clickedOutside) {
+        dropdown.classList.add('hidden');
+      }
     });
   });
 
-  document.addEventListener('click', (e) => {
-    const clickedOutside = !select.contains(e.target);
-    if (clickedOutside) {
-      dropdown.classList.add('hidden');
-    }
+  const labels = document.querySelectorAll('div.flex label');
+
+  labels.forEach(label => {
+    label.addEventListener('click', () => {
+      labels.forEach(item => item.classList.remove('active'));
+
+      label.classList.add('active');
+    });
   });
-});
+}
 
-const labels = document.querySelectorAll('div.flex label');
 
-labels.forEach(label => {
-  label.addEventListener('click', () => {
-    labels.forEach(item => item.classList.remove('active'));
-
-    label.classList.add('active');
-  });
-});
 
 // Functions
-const cardContainer = document.querySelector('#card-container');
-
-data.forEach(item => {
-  cardContainer.innerHTML +=
-    `<li class="rounded-xl overflow-hidden shadow-md bg-white">
+function getCars() {
+  let card = "";
+  data.forEach((item) => {
+    card +=
+      `<li class="rounded-xl overflow-hidden shadow-md bg-white">
     <a href="#" target="_blank" class="relative">
         <img src="${item.images}" alt="${item.brand} ${item.model}"
              class="w-full h-48 object-cover" loading="lazy" />
@@ -77,6 +82,9 @@ data.forEach(item => {
             ` : ''}
             
         </div>
+        <div id="wishlist-icon-${item.id}" onclick="addToWishlist(${item.id}, event)" class="absolute top-[5%] right-[5%] flex items-center gap-1">
+           <i class="fa-regular fa-heart text-white text-[20px]"></i>
+        </div>
     </a>
 
   <div class="p-4 space-y-2">
@@ -86,4 +94,45 @@ data.forEach(item => {
      <div class="text-xs text-gray-400">${item.city} • bugün 20:25</div>
   </div>
 </li>`;
-})
+  })
+  cardContainer.innerHTML = card;
+}
+
+window.addEventListener("DOMContentLoaded", () => {
+  data.forEach(car => {
+    renderWishlistIcon(car.id);
+  });
+});
+
+
+function addToWishlist(carId, e) {
+  e.preventDefault();
+const wishlistArr = JSON.parse(localStorage.getItem("wishlist") || "[]")
+
+  const listedCar = data.find(item => item.id == carId)
+  if (!listedCar) return;
+  
+  const exits = wishlistArr.some(item => item.id == listedCar.id)
+  if (!exits) {
+    wishlistArr.push(listedCar)
+    localStorage.setItem("wishlist", JSON.stringify(wishlistArr))
+  }
+    renderWishlistIcon(carId);
+}
+
+
+function renderWishlistIcon(carId) {
+const wishlistArr = JSON.parse(localStorage.getItem("wishlist") || "[]")
+
+  const exists = wishlistArr.some(item => item.id == carId);
+
+  const iconContainer = document.querySelector(`#wishlist-icon-${carId}`)
+  if (!iconContainer) return;
+
+  iconContainer.innerHTML = exists
+    ? `<i class="fa-solid fa-heart text-[20px] text-red-500"></i>`
+    : `<i class="fa-regular fa-heart text-white text-[20px]"></i>`;
+}
+// CALL FUNCTION
+getCars()
+getCustomSelect()

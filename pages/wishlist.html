@@ -9,12 +9,12 @@
         integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
     <title>Turbo.Az: avtomobil almaq, satmaq, təzə və işlənmiş avtomobillərin satışı</title>
-    <link rel="stylesheet" href="./assets/css/style.css">
-    <link rel="icon" type="image/x-icon" href="./favicon.ico">
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="icon" type="image/x-icon" href="../favicon.ico">
 
 </head>
 
-<body class="relative">
+<body>
 
     <header class="text-[15px]">
         <div class="header-top">
@@ -47,7 +47,7 @@
                 <div
                     class="max-w-[1010px] mx-auto px-2 py-[21px] text-white h-[60px] flex items-center justify-between">
                     <div class="left flex items-center h-full">
-                        <h1 class="text-[18px] font-[700] uppercase me-[25px]"><a href="#">Turbo.Az</a></h1>
+                        <h1 class="text-[18px] font-[700] uppercase me-[25px]"><a href="../index.html">Turbo.Az</a></h1>
                         <ul class="flex ">
                             <li class="px-[10px]"><a href="#">Bütün elanlar</a></li>
                             <li class="px-[10px]"><a href="#">Dilerlər</a></li>
@@ -60,7 +60,7 @@
                     <div class="right">
                         <button
                             class="cursor-pointer bg-[#7ED321] h-[40px] rounded-[7px] px-[10px] font-[500] transition-all duration-200 hover:bg-[#85c01f]  flex items-center">
-                            <img class="w-[15px] h-[15px] me-[7px]" src="./assets/images/icons/plus.svg"
+                            <img class="w-[15px] h-[15px] me-[7px]" src="../assets/images/icons/plus.svg"
                                 alt="Plus Icon"> Yeni elan
                         </button>
                     </div>
@@ -274,23 +274,25 @@
     <main>
         <section id="main-header" class="bg-[#F1F3F7] h-[60px] shadow-sm">
             <div class="max-w-[1010px] mx-auto h-full flex items-center">
-                <h2 class="text-[#212C3A] font-[700] uppercase text-[16px]">Premium elanlar</h2>
+                <h2 class="text-[#212C3A] font-[700] uppercase text-[16px]">İzlədiyiniz Elanlar</h2>
             </div>
         </section>
         <section id="card-section">
             <div class="max-w-[1010px] mx-auto py-8">
-                <ul id="card-container" class="grid grid-cols-4 gap-4">
+                <div id="noSearch"></div>
+                <ul id="wishlist-card-container" class="grid grid-cols-4 gap-4">
                 </ul>
+                <div class="flex items-center justify-center">
+                    <button onclick="clearWishlist()" id="clear-button" class="text-white bg-red-500 p-[10px_15px] mt-10 rounded-lg font-[600] cursor-pointer hover:-rotate-[0.1rad] hover:bg-red-600 duration-700 transition-all">
+                        Favoritləri Təmizlə
+                    </button>
+                </div>
             </div>
         </section>
     </main>
 
-    <a target="_blank" href="./pages/wishlist.html" class="fixed bottom-[20px] right-[20px] rounded-full bg-red-500 hover:bg-red-600 w-[60px] h-[60px] transition-all duration-700 hover:-translate-y-[5px] cursor-pointer flex items-center justify-center">
-        <i class="fa-solid fa-heart-circle-check text-white text-[20px]"></i>
-    </a>
-
-    <script src="./assets/js/data.js"></script>
-    <script src="./assets/js/script.js"></script>
+    <script src="../assets/js/data.js"></script>
+    <script src="../assets/js/wishlist.js"></script>
 </body>
 
 </html>
